@@ -53,7 +53,6 @@ class GenreViewSet(viewsets.ModelViewSet):
 class BorrowerViewSet(viewsets.ModelViewSet):
     queryset = Borrower.objects.all()
     serializer_class = BorrowerSerializer
-
     
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
@@ -76,7 +75,6 @@ class BorrowerViewSet(viewsets.ModelViewSet):
 class TransactionViewSet(viewsets.ModelViewSet):
     queryset = Transaction.objects.all()
     serializer_class = TransactionSerializer
-
     
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
@@ -99,7 +97,6 @@ class TransactionViewSet(viewsets.ModelViewSet):
 class LanguageViewSet(viewsets.ModelViewSet):
     queryset = Language.objects.all()
     serializer_class = LanguageSerializer
-
    
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
@@ -122,7 +119,6 @@ class LanguageViewSet(viewsets.ModelViewSet):
 class BookCopyViewSet(viewsets.ModelViewSet):
     queryset = BookCopy.objects.all()
     serializer_class = BookCopySerializer
-
     
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
@@ -145,7 +141,6 @@ class BookCopyViewSet(viewsets.ModelViewSet):
 class BookStatusViewSet(viewsets.ModelViewSet):
     queryset = BookStatus.objects.all()
     serializer_class = BookStatusSerializer
-
     
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
@@ -168,7 +163,6 @@ class BookStatusViewSet(viewsets.ModelViewSet):
 class BookReviewViewSet(viewsets.ModelViewSet):
     queryset = BookReview.objects.all()
     serializer_class = BookReviewSerializer
-
     
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
@@ -191,7 +185,6 @@ class BookReviewViewSet(viewsets.ModelViewSet):
 class BookViewSet(viewsets.ModelViewSet):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
-
     
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
@@ -214,7 +207,6 @@ class BookViewSet(viewsets.ModelViewSet):
 class PublisherViewSet(viewsets.ModelViewSet):
     queryset = Publisher.objects.all()
     serializer_class = PublisherSerializer
-
    
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
