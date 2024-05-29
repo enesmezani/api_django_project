@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import AuthorViewSet, GenreViewSet, BorrowerViewSet, TransactionViewSet, LanguageViewSet, BookCopyViewSet, BookStatusViewSet, BookReviewViewSet, BookViewSet, PublisherViewSet
+from .views import AuthorViewSet, GenreViewSet, BorrowerViewSet, TransactionViewSet, LanguageViewSet, BookCopyViewSet, BookStatusViewSet, BookReviewViewSet, BookViewSet, PublisherViewSet, UserLoginApiView
 
 router = DefaultRouter()
 router.register(r'authors', AuthorViewSet)
@@ -16,4 +16,5 @@ router.register(r'publishers', PublisherViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('login/', UserLoginApiView.as_view()),
 ]
