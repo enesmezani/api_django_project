@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': r'C:\Users\Perdorues\Desktop\python-data-project\library_db.db',
+        'NAME': os.path.join(BASE_DIR, 'library_db.db')
     }
 }
 

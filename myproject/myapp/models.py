@@ -4,6 +4,9 @@ from django.db import models
 
 class Author(models.Model):
     name = models.CharField(max_length=255)
+    class Meta:
+        db_table = 'authors'
+        managed = False
 
     def __str__(self):
         return self.name
@@ -11,11 +14,19 @@ class Author(models.Model):
 class Genre(models.Model):
     name = models.CharField(max_length=255)
 
+    class Meta:
+        db_table = 'genres'
+        managed = False
+
     def __str__(self):
         return self.name
     
 class Borrower(models.Model):
     name = models.CharField(max_length=255)
+
+    class Meta:
+        db_table = 'borrowers'
+        managed = False
 
     def __str__(self):
         return self.name
@@ -26,8 +37,19 @@ class Transaction(models.Model):
     check_out_date = models.DateField()
     return_date = models.DateField(null=True, blank=True)
 
+    class Meta:
+        db_table = 'transactions'
+        managed = False
+
+    def __str__(self):
+        return self.book
+
 class Language(models.Model):
     name = models.CharField(max_length=255)
+
+    class Meta:
+        db_table = 'languages'
+        managed = False
 
     def __str__(self):
         return self.name
@@ -37,12 +59,20 @@ class BookCopy(models.Model):
     book = models.ForeignKey('Book', on_delete=models.CASCADE)
     status = models.ForeignKey('BookStatus', on_delete=models.CASCADE)
 
+    class Meta:
+        db_table = 'book_copies'
+        managed = False
+
     def __str__(self):
         return self.book
 
 
 class BookStatus(models.Model):
     name = models.CharField(max_length=255)
+
+    class Meta:
+        db_table = 'book_statuses'
+        managed = False
 
     def __str__(self):
         return self.name
@@ -52,6 +82,10 @@ class BookReview(models.Model):
     reviewer_name = models.CharField(max_length=255)
     rating = models.IntegerField()
     comment = models.TextField()
+
+    class Meta:
+        db_table = 'book_reviews'
+        managed = False
 
     def __str__(self):
         return self.reviewer_name
@@ -65,11 +99,19 @@ class Book(models.Model):
     publisher = models.ForeignKey('Publisher', on_delete=models.CASCADE)
     genres = models.ManyToManyField('Genre')
 
+    class Meta:
+        db_table = 'books'
+        managed = False
+
     def __str__(self):
         return self.title
 
 class Publisher(models.Model):
     name = models.CharField(max_length=255)
+
+    class Meta:
+        db_table = 'publishers'
+        managed = False
 
     def __str__(self):
         return self.name
